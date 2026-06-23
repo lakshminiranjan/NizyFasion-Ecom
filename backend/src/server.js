@@ -3,12 +3,16 @@ import path from 'path';
 import { ENV } from './config/env.js';
 import { connectDB } from './config/db.js';
 import { clerkMiddleware } from '@clerk/express'
+import {serve} from 'inngest/express'
+import { functions,inngest } from './config/inngest.js';
 
 const app = express();
 
 const __dirname = path.resolve();
 
+app.use(express.json());
 app.use(clerkMiddleware())//register Clerk middleware to handle authentication
+app.use("/api/inngest", serve({ client: inngest, functions }))//register Inngest middleware to handle incoming events
 
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok" });
