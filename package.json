@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/lakshminiranjan/NizyFasion-Ecom/issues"
   },
-  "homepage": "https://github.com/lakshminiranjan/NizyFasion-Ecom#readme"
+  "homepage": "https://github.com/lakshminiranjan/NizyFasion-Ecom#readme",
+  "dependencies": {
+    "multer": "^2.2.0"
+  }
 }
