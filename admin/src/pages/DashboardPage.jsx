@@ -47,7 +47,7 @@ function DashboardPage() {
       <div className="stats stats-vertical lg:stats-horizontal shadow w-full bg-base-100">
         {statsCards.map((stat) => (
           <div key={stat.name} className="stat">
-            <div className="stat-figure text-primary">{stat.icon}</div>
+            <div className="stat-figure text-secondary">{stat.icon}</div>
             <div className="stat-title">{stat.name}</div>
             <div className="stat-value">{stat.value}</div>
           </div>

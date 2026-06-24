@@ -124,7 +124,7 @@ function ProductsPage() {
           <h1 className="text-2xl font-bold">Products</h1>
           <p className="text-base-content/70 mt-1">Manage your product inventory</p>
         </div>
-        <button onClick={() => setShowModal(true)} className="btn btn-primary gap-2">
+        <button onClick={() => setShowModal(true)} className="btn btn-secondary gap-2">
           <PlusIcon className="w-5 h-5" />
           Add Product
         </button>
@@ -295,13 +295,13 @@ function ProductsPage() {
                 <span className="label-text-alt text-xs opacity-60">Max 3 images</span>
               </label>
 
-              <div className="bg-base-200 rounded-xl p-4 border-2 border-dashed border-base-300 hover:border-primary transition-colors">
+              <div className="bg-base-200 rounded-xl p-4 border-2 border-dashed border-base-300 hover:border-secondary transition-colors">
                 <input
                   type="file"
                   accept="image/*"
                   multiple
                   onChange={handleImageChange}
-                  className="file-input file-input-bordered file-input-primary w-full"
+                  className="file-input file-input-bordered file-input-secondary w-full"
                   required={!editingProduct}
                 />
 
@@ -337,7 +337,7 @@ function ProductsPage() {
 
               <button
                 type="submit"
-                className="btn btn-primary"
+                className="btn btn-secondary"
                 disabled={createProductMutation.isPending || updateProductMutation.isPending}
               >
                 {createProductMutation.isPending || updateProductMutation.isPending ? (
