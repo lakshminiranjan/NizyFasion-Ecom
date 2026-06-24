@@ -3,7 +3,7 @@ import axiosInstance from "./axios";
 export const productApi = {
   getAll: async () => {
     const { data } = await axiosInstance.get("/admin/products");
-    return data;
+    return data.products;
   },
 
   create: async (formData) => {
@@ -25,7 +25,7 @@ export const productApi = {
 export const orderApi = {
   getAll: async () => {
     const { data } = await axiosInstance.get("/admin/orders");
-    return data;
+    return data.orders;
   },
 
   updateStatus: async ({ orderId, status }) => {
@@ -44,6 +44,6 @@ export const statsApi = {
 export const customerApi = {
   getAll: async () => {
     const { data } = await axiosInstance.get("/admin/customers");
-    return data;
+    return data.customers;
   },
 };

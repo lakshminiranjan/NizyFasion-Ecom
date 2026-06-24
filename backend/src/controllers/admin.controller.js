@@ -39,7 +39,7 @@ export async function createProduct(req, res) {
 }
 export async function getAllProducts(_, res) {
   try {
-    const products = (await Product.find()).sort({ createdAt: -1 });
+    const products = await Product.find().sort({ createdAt: -1 });
     return res.status(200).json({ products });
   }
   catch (err) {
@@ -149,7 +149,7 @@ export async function deleteOrder(req, res) {
 
 export async function getAllCustomers(_, res) {
   try {
-    const customers = await User.find().select('name email createdAt').sort({ createdAt: -1 });
+    const customers = await User.find().select('name email imageUrl addresses wishlist createdAt').sort({ createdAt: -1 });
     return res.status(200).json({ customers });
   } catch (err) {
     return res.status(500).json({ message: "Internal Server Error" });
